@@ -23,14 +23,14 @@ class AdminContactsController extends AbstractController
     {
         //Accessing request object error_log(print_r($request->query));
         $active = $request->query->get('active'); 
-        
-        if($active == 1) {
+        error_log(print_r($active));
+        if($active === 1) {
            return $this->render('admin_contacts/index.html.twig', [
                 'contacts' => $contactsRepository->returnIsEnabled(),
             ]);
         }
 
-        if($active == 0) {
+        if($active === 0) {
            return $this->render('admin_contacts/index.html.twig', [
                 'contacts' => $contactsRepository->returnIsNotEnabled(),
             ]);
