@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Hello IndexPageController!{% endblock %}
+
+{% block body %}
+<section id="services" class="service-section pt-130">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-6 col-lg-7 col-md-9 mx-auto">
+                        <div class="section-title text-center mb-55">
+                            <span class="wow fadeInDown" data-wow-delay=".2s">Functionality</span>
+                            <p class="wow fadeInUp" data-wow-delay=".6s">Short Simple Symfony Demo</p>
+                        </div>
+                    </div>
+                </div>
+        
+                <div class="row">
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-pointer-up"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Login</h4>
+                                <p>Ability to Login</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-money-protection"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Authentication</h4>
+                                <p>Only able to access administration panel once authenticated</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-save"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Manage Contacts</h4>
+                                <p>Ability to add, edit, and save contacts</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-bolt"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Logout</h4>
+                                <p>Logout out of application, and deauthorize access to administration panel</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-reload"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Routes</h4>
+                                <p>Routes made with SymfonyMakerBundle and configured to use annotations</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4 col-md-6">
+                        <div class="service-box box-style">
+                            <div class="service-icon box-icon-style">
+                                <i class="lni lni-reload"></i>
+                            </div>
+                            <div class="box-content-style service-content">
+                                <h4>Database</h4>
+                                <p>Configured via FOS user bundle and doctrine entities</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+{% endblock %}

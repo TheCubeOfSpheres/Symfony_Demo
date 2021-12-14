@@ -1,0 +1,62 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts{% endblock %}
+
+{% block body %}
+<section class="contact-section pt-130 pb-100">
+    <div class="container">
+        <h4>Contacts</h4>
+        <div class="col-xl-12">
+            <div class="contact-form-wrapper">
+                <div class="row">
+                    <table class="table">
+                        <tbody>
+                            <tr>
+                                <th>Id</th>
+                                <td>{{ contact.id }}</td>
+                            </tr>
+                            <tr>
+                                <th>FirstName</th>
+                                <td>{{ contact.firstName }}</td>
+                            </tr>
+                            <tr>
+                                <th>LastName</th>
+                                <td>{{ contact.lastName }}</td>
+                            </tr>
+                            <tr>
+                                <th>Email</th>
+                                <td>{{ contact.email }}</td>
+                            </tr>
+                            <tr>
+                                <th>IsEnabled</th>
+                                <td>{{ contact.isEnabled ? 'Yes' : 'No' }}</td>
+                            </tr>
+                            <tr>
+                                <th>DtCreated</th>
+                                <td>{{ contact.dtCreated ? contact.dtCreated|date('H:i:s') : '' }}</td>
+                            </tr>
+                            <tr>
+                                <th>DtUpdated</th>
+                                <td>{{ contact.dtUpdated ? contact.dtUpdated|date('H:i:s') : '' }}</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row">
+                    <a href="{{ path('admin_contacts_index') }}">back to list</a>
+
+                    <a href="{{ path('admin_contacts_edit', {'id': contact.id}) }}">edit</a>            
+                </div>
+                <div class="row">
+                    <center>
+                        {{ include('admin_contacts/_delete_form.html.twig') }}
+                    </center>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</section>        
+
+    
+{% endblock %}

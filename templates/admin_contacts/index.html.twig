@@ -1,0 +1,77 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Contacts index{% endblock %}
+
+{% block body %}
+    
+    <section class="contact-section pt-130 pb-100">
+        <div class="container">
+            <h4 style="padding: 15px">Contacts index</h4>
+            <div class="col-xl-12">
+                <div class="contact-form-wrapper">
+                    <div class="row">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Id</th>
+                                    <th>FirstName</th>
+                                    <th>LastName</th>
+                                    <th>Email</th>
+                                    <th>IsEnabled</th>
+                                    <th>DtCreated</th>
+                                    <th>DtUpdated</th>
+                                    <th>actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                            {% for contact in contacts %}
+                                <tr>
+                                    <td>{{ contact.id }}</td>
+                                    <td>{{ contact.firstName }}</td>
+                                    <td>{{ contact.lastName }}</td>
+                                    <td>{{ contact.email }}</td>
+                                    <td>{{ contact.isEnabled ? 'Yes' : 'No' }}</td>
+                                    <td>{{ contact.dtCreated ? contact.dtCreated|date('H:i:s') : '' }}</td>
+                                    <td>{{ contact.dtUpdated ? contact.dtUpdated|date('H:i:s') : '' }}</td>
+                                    <td>
+                                        <a style="padding-right: 15px"href="{{ path('admin_contacts_show', {'id': contact.id}) }}">show</a>
+                                        <a href="{{ path('admin_contacts_edit', {'id': contact.id}) }}">edit</a>
+                                    </td>
+                                </tr>
+                            {% else %}
+                                <tr>
+                                    <td colspan="8">no records found</td>
+                                </tr>
+                            {% endfor %}
+                            </tbody>
+                        </table>
+                    </div>
+                    <div style="padding-top: 15px" class="row">
+                        <center> 
+                            <div class="row">   
+                                <div class="col-9">
+                                    <a href="{{ path('admin_contacts_new') }}">Create new</a>
+                                </div>    
+                                
+                                <div class="col-1">
+                                    <a href="{{ path('admin_contacts_index') }}">All</a>
+                                </div>
+                                
+                                <div class="col-1">
+                                    <a href="{{ path('admin_contacts_index') }}">Active</a>
+                                </div>
+                                
+                                <div class="col-1">
+                                    <a href="{{ path('admin_contacts_inactive') }}">inActive</a>
+                                </div>
+                            </div>   
+                            
+                        </center>  
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+
+    </section>  
+{% endblock %}
